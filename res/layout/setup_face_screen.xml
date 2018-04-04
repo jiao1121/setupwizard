@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015 The CyanogenMod Project
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <include layout="@layout/header_condensed" />
+
+    <FrameLayout android:id="@+id/page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/content_margin_left"
+                android:paddingEnd="@dimen/content_margin_left"
+                style="@style/PageContent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PageSummaryText"
+                    android:textSize="13dp"
+                    android:textColor="@color/text_color"
+                    android:layout_marginBottom="@dimen/summary_margin_bottom"
+                    android:text="@string/face_setup_summary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lock_divider_margintop" >
+
+                    <include layout="@layout/divider" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                      android:id="@+id/set_lock"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:minHeight="?android:attr/listPreferredItemHeight"
+                      android:gravity="center_vertical"
+                      android:background="?android:attr/selectableItemBackground"
+                      android:clickable="true" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/set_lock_face" />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:textColor="@color/title_color"
+                        android:text="@string/add_face_id"
+                        android:layout_marginLeft="@dimen/carrier_text_margin_left"
+                        android:maxLines="4" />
+                </LinearLayout>
+
+                <include layout="@layout/divider" />
+
+                <LinearLayout
+                      android:id="@+id/skip_lock"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:minHeight="?android:attr/listPreferredItemHeight"
+                      android:gravity="center_vertical"
+                      android:background="?android:attr/selectableItemBackground"
+                      android:clickable="true" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/not_set" />
+
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:textColor="@color/title_color"
+                        android:text="@string/lock_skip_summary"
+                        android:layout_marginLeft="@dimen/carrier_text_margin_left"
+                        android:maxLines="4" />
+                </LinearLayout>
+
+                <include layout="@layout/divider" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <LinearLayout
+        android:paddingEnd="@dimen/content_margin_left"
+        android:paddingStart="@dimen/content_margin_left"
+        android:paddingBottom="@dimen/bottom_btn_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/view_unagree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_btn_height"
+            android:background="@drawable/backup_btn"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/view_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_btn_height"
+            android:background="@drawable/next_sec"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/skip" />
+
+    </LinearLayout>
+</LinearLayout>

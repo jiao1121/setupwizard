@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/primary">
+
+    <include layout="@layout/header_condensed" />
+
+    <FrameLayout android:id="@+id/page"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1">
+
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/content_margin_left"
+                android:paddingRight="@dimen/content_margin_left"
+                style="@style/PageContent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="@dimen/summary_margin_bottom"
+                    style="@style/PageSummaryText" />
+
+                <LinearLayout
+                    android:id="@+id/location"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+
+                    <CheckBox
+                        android:id="@+id/location_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:button="@drawable/pwd_check_selctor"
+                        android:duplicateParentState="true"
+                        android:clickable="false" />
+
+                    <TextView
+                        android:id="@+id/location_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:textColor="@color/title_color"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="top"
+                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:text="@string/location_access_summary"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:maxLines="5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/battery_saving"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <CheckBox
+                        android:id="@+id/battery_saving_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:button="@drawable/pwd_check_selctor"
+                        android:layout_marginTop="5dp"
+                        android:duplicateParentState="true"
+                        android:clickable="false" />
+
+
+                    <TextView
+                        android:id="@+id/battery_saving_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:textColor="@color/title_color"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="top"
+                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:text="@string/location_battery_saving"
+                        android:maxLines="5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/network"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <CheckBox
+                        android:id="@+id/network_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/pwd_check_selctor"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:duplicateParentState="true"
+                        android:clickable="false" />
+
+                    <TextView
+                        android:id="@+id/network_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:textColor="@color/title_color"
+                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="top"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:text="@string/location_network"
+                        android:maxLines="5" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+        android:id="@+id/navigation_bar"
+        android:visibility="invisible"
+        style="@style/setup_wizard_navbar_style" />
+</LinearLayout>

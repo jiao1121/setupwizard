@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/primary">
+
+    <include layout="@layout/header_condensed" />
+
+    <FrameLayout android:id="@+id/page"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1">
+
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/PageContent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PageSummaryText"
+                    android:textSize="13sp"
+                    android:paddingLeft="@dimen/content_margin_left"
+                    android:layout_marginBottom="@dimen/summary_margin_bottom"
+                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:text="@string/change_wifi_connect" />
+
+                <com.elephone.setupwizard.MyListView
+                    android:id="@+id/freelook_listview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/content_margin_left"
+                    android:paddingRight="@dimen/content_margin_left"
+                    android:background="#00000000"
+                    android:scrollbars="none"
+                    android:cacheColorHint="#00000000"
+                    android:dividerHeight="1.0dip"
+                    android:listSelector="#00000000" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <LinearLayout
+        android:paddingEnd="@dimen/content_margin_left"
+        android:paddingStart="@dimen/content_margin_left"
+        android:paddingBottom="@dimen/bottom_btn_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/view_unagree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_btn_height"
+            android:background="@drawable/backup_btn"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/view_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bottom_btn_height"
+            android:background="@drawable/next_sec"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/skip" />
+
+    </LinearLayout>
+</LinearLayout>
